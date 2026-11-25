@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f1ea">
+  <link rel="icon" href="data:,">
+  <meta name="description" content="Каталог архитектурного текстиля для стен и потолков. Выберите оформление и подготовьте заявку на индивидуальный расчёт.">
+  <title>Тихие стены — каталог архитектурного текстиля</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <a class="skip" href="#catalog">К каталогу решений</a>
+  <header class="header wrap">
+    <a class="wordmark" href="#top" aria-label="Тихие стены, к началу">Тихие <span>стены</span></a>
+    <nav aria-label="Основная навигация"><a href="#catalog">Каталог</a><a href="#how">Как это работает</a><a href="#request">Запрос расчёта</a></nav>
+    <a class="header-cta" href="#catalog">Выбрать оформление</a>
+  </header>
+  <main id="top">
+    <section class="hero wrap" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <h1 id="hero-title">Архитектурный текстиль для вашего интерьера</h1>
+        <p>Представьте фактуру, цвет и рисунок в своём пространстве. Выберите визуальное направление — и покажите специалисту, что вам близко.</p>
+        <a class="button button-dark" href="#catalog">Подобрать оформление</a>
+        <span class="hero-foot"><span>Стены и потолки</span><span>Индивидуальный запрос</span></span>
+      </div>
+      <div class="hero-visual"><img src="./assets/scene-0.webp" alt="Визуализация интерьера со светлой текстильной стеной"><span class="image-note">Визуализация интерьера</span></div>
+    </section>
+
+    <section class="intro wrap" id="how">
+      <h2>От понравившейся отделки — к понятному запросу</h2>
+      <div><p>Вместо абстрактного «хочу что-то похожее» вы выбираете визуальный пример. Он остаётся в форме вместе с параметрами помещения и попадает в предпросмотр заявки.</p><a class="button button-dark" href="#request">Посмотреть состав заявки</a></div>
+    </section>
+
+    <section class="catalog wrap" id="catalog" aria-labelledby="catalog-title">
+      <div class="section-head"><h2 id="catalog-title">Выберите направление</h2><p>Фактура, рисунок, печать и свет помогают представить текстильную поверхность в вашем интерьере.</p></div>
+      <div id="filters" class="filters" role="group" aria-label="Фильтр направлений"></div>
+      <div id="catalog-grid" class="catalog-grid"></div>
+    </section>
+
+    <section class="bridge"><div class="wrap bridge-inner"><h2>Уже есть идея для своего пространства?</h2><p>Точные замеры не нужны. Достаточно выбрать пример и описать помещение так, как вы его представляете.</p><a class="button button-light" href="#request">Составить запрос</a></div></section>
+
+    <section class="request wrap" id="request" aria-labelledby="request-title">
+      <div class="section-head"><h2 id="request-title">Запросить индивидуальный расчёт</h2><p>Укажите параметры помещения и при желании приложите фото или план. На следующем шаге можно проверить состав заявки.</p></div>
+      <div class="request-layout">
+        <aside class="selected-panel" aria-live="polite"><p class="field-label">Выбранное оформление</p><img id="selected-image" src="./assets/scene-0.webp" alt=""><h3 id="selected-title">Тихая фактура</h3><p id="selected-description"></p><button class="text-button" type="button" id="change-selection">Изменить выбор</button><span class="image-note">Визуализация интерьера</span></aside>
+        <form id="request-form" novalidate>
+          <div class="form-top"><h3>Расскажите о помещении</h3><button class="text-button" type="button" id="fill-example">Заполнить пример</button></div>
+          <div class="form-grid">
+            <label>Тип помещения <select name="room" required><option value="">Выберите тип</option><option>Гостиная</option><option>Спальня</option><option>Детская</option><option>Кухня</option><option>Офис</option><option>Другое помещение</option></select></label>
+            <label>Что планируется оформить <select name="surface" required><option value="">Выберите поверхность</option><option>Стены</option><option>Потолок</option><option>Стены и потолок</option><option>Пока не знаю</option></select></label>
+          </div>
+          <fieldset class="measure"><legend>Что известно о размерах?</legend><div class="choices"><label><input type="radio" name="measureMode" value="area" checked> Примерная площадь</label><label><input type="radio" name="measureMode" value="dimensions"> Размеры поверхности</label><label><input type="radio" name="measureMode" value="unknown"> Пока не знаю</label></div><div id="measure-entry"><label id="area-label">Примерная площадь, м² <input name="area" type="text" inputmode="decimal" placeholder="Например, около 18"></label><div id="dimension-inputs" class="form-grid" hidden><label>Ширина, м <input name="width" type="text" inputmode="decimal" placeholder="Например, 4"></label><label>Высота, м <input name="height" type="text" inputmode="decimal" placeholder="Например, 2,7"></label></div></div></fieldset>
+          <label class="upload-label">Фото или план помещения <span>необязательно, JPG, PNG, WEBP или PDF до 10 МБ</span><input id="file-input" name="attachment" type="file" accept=".jpg,.jpeg,.png,.webp,.pdf,image/jpeg,image/png,image/webp,application/pdf"></label><div id="file-preview" class="file-preview" hidden></div>
+          <label>Пожелания и комментарий <textarea name="comment" rows="4" placeholder="Например, нужна спокойная фактура и мягкий свет у дивана"></textarea></label>
+          <div class="form-grid"><label>Как удобнее связаться <select name="contactMethod"><option>Телефон</option><option>Telegram</option><option>Электронная почта</option></select></label><label>Контакт для связи <input name="contact" type="text" autocomplete="off" placeholder="Телефон, @имя или почта"></label></div>
+          <p id="form-error" class="form-error" role="alert" hidden></p>
+          <button class="button button-dark submit" type="submit">Предпросмотр заявки</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="result wrap" id="result" hidden aria-labelledby="result-title"><div class="result-head"><h2 id="result-title">Предпросмотр заявки</h2><span class="result-badge">Заявка не отправлена</span></div><div id="result-content"></div><div class="result-actions"><button id="edit-request" class="button button-outline" type="button">Изменить данные</button><button id="new-request" class="text-button" type="button">Начать заново</button></div></section>
+  </main>
+  <footer class="footer"><div class="wrap footer-inner"><div><strong>Тихие стены</strong><p>Архитектурный текстиль для стен и потолков</p></div><p>Выберите оформление и подготовьте запрос с параметрами вашего помещения.</p></div></footer>
+  <script defer src="./data.js"></script>
+  <script defer src="./app.js"></script>
+</body>
+</html>
