@@ -16,7 +16,7 @@ function renderFilters(active='all') {
 
 function renderCatalog(active='all') {
   const items = active === 'all' ? categories : categories.filter(item => item.id === active);
-  $('#catalog-grid').innerHTML = items.map(item => `<article class="card"><div class="card-visual"><img src="${item.image}" alt="${escapeHtml(item.alt)}"><span class="image-note">Визуализация интерьера</span></div><div class="card-body"><p class="card-category">${escapeHtml(item.category)}</p><h3>${escapeHtml(item.title)}</h3><p class="card-description">${escapeHtml(item.description)}</p><button type="button" data-select="${item.id}">Рассчитать похожую отделку</button></div></article>`).join('');
+  $('#catalog-grid').innerHTML = items.map(item => `<article class="card"><div class="card-visual"><img src="${item.image}" alt="${escapeHtml(item.alt)}"></div><div class="card-body"><p class="card-category">${escapeHtml(item.category)}</p><h3>${escapeHtml(item.title)}</h3><p class="card-description">${escapeHtml(item.description)}</p><button type="button" data-select="${item.id}">Рассчитать похожую отделку</button></div></article>`).join('');
   $('#catalog-grid').querySelectorAll('[data-select]').forEach(button => button.addEventListener('click', () => choose(button.dataset.select)));
 }
 
